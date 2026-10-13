@@ -710,13 +710,13 @@
 </head>
 <body>
 
-  <!-- 100% INVISIBLE BACKGROUND YOUTUBE AUDIO ENGINE -->
-  <div style="position: fixed; top: -1000px; left: -1000px; width: 200px; height: 200px; opacity: 0.001; pointer-events: none; z-index: -999;">
+  <!-- HIDDEN OFF-SCREEN YOUTUBE IFRAME (Zero pixels visible on page) -->
+  <div style="position: fixed; top: -9999px; left: -9999px; width: 10px; height: 10px; overflow: hidden; pointer-events: none; z-index: -9999;">
     <iframe 
       id="yt-embed-player"
-      width="200" 
-      height="200" 
-      src="https://www.youtube.com/embed/Xg2PBy8wLyo?enablejsapi=1&loop=1&playlist=Xg2PBy8wLyo&playsinline=1&rel=0&controls=0&modestbranding=1" 
+      width="100" 
+      height="100" 
+      src="https://www.youtube.com/embed/Xg2PBy8wLyo?enablejsapi=1&loop=1&playlist=Xg2PBy8wLyo&playsinline=1&rel=0&controls=0" 
       title="Background Music" 
       frameborder="0" 
       allow="autoplay; encrypted-media">
@@ -742,7 +742,7 @@
         <circle cx="50" cy="50" r="46" stroke="#DFBA73" stroke-width="1.5" stroke-dasharray="3 3"/>
         <circle cx="50" cy="50" r="35" stroke="#DFBA73" stroke-width="1"/>
         <path d="M50 12 L50 88 M12 50 L88 50 M23 23 L77 77 M23 77 L77 23" stroke="#DFBA73" stroke-width="0.8"/>
-        <circle cx="50" cy="50" r="8" fill="#DFBA73"/>
+        <circle cx="50" cy="8" fill="#DFBA73"/>
       </svg>
 
       <div style="font-size: 0.72rem; letter-spacing: 3px; color: var(--gold-light); text-transform: uppercase;">
@@ -1025,7 +1025,7 @@
 
   <!-- JAVASCRIPT CONTROLLERS -->
   <script>
-    // 1. HIDDEN YOUTUBE AUDIO ENGINE
+    // 1. INVISIBLE YOUTUBE AUDIO CONTROLLER
     const ytIframe = document.getElementById('yt-embed-player');
     let isMusicPlaying = false;
 
@@ -1073,7 +1073,7 @@
 
     document.getElementById('music-btn').addEventListener('click', toggleMusic);
 
-    // Wax Seal tap unlocks audio on all mobile browsers and plays YouTube track
+    // Wax Seal tap unlocks audio and plays YouTube track
     const sealBtn = document.getElementById('seal-trigger');
     const envelope = document.getElementById('envelope-screen');
     sealBtn.addEventListener('click', () => {
