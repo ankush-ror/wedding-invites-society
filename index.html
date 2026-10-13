@@ -11,7 +11,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Ankush weds Supriya | Wedding Invitation" />
   <meta property="og:description" content="With blessings of Sweety Gupta &amp; Naresh Kumar. Barat &amp; Wedding on 10 Nov 2026 at MJ Farm, Kharar." />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80" />
+  <meta property="og:image" content="couple.jpg" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -227,15 +227,20 @@
       margin-bottom: 22px;
     }
 
+    /* LUXURY ARCHED PHOTO FRAME */
     .photo-arch-frame {
-      width: 230px;
-      height: 310px;
-      border-radius: 120px 120px 20px 20px;
+      width: 250px;
+      height: 340px;
+      border-radius: 130px 130px 24px 24px;
       border: 3px solid var(--gold-primary);
+      outline: 1.5px dashed rgba(254, 240, 199, 0.6);
+      outline-offset: -8px;
       padding: 6px;
-      background: linear-gradient(135deg, rgba(223, 186, 115, 0.3) 0%, rgba(74, 5, 15, 0.6) 100%);
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65), 0 0 25px rgba(223, 186, 115, 0.25);
-      margin-bottom: 24px;
+      background: radial-gradient(circle at 50% 20%, rgba(223, 186, 115, 0.4) 0%, rgba(74, 5, 15, 0.8) 100%);
+      box-shadow: 
+        0 20px 45px rgba(0, 0, 0, 0.7),
+        0 0 35px rgba(223, 186, 115, 0.35);
+      margin: 10px auto 25px;
       position: relative;
       overflow: hidden;
     }
@@ -244,13 +249,15 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 114px 114px 14px 14px;
+      object-position: center top;
+      border-radius: 122px 122px 18px 18px;
+      filter: brightness(1.03) contrast(1.05) saturate(1.12);
       animation: kenBurns 18s alternate infinite ease-in-out;
     }
 
     @keyframes kenBurns {
       0% { transform: scale(1); }
-      100% { transform: scale(1.12); }
+      100% { transform: scale(1.08); }
     }
 
     .couple-title {
@@ -710,7 +717,7 @@
 </head>
 <body>
 
-  <!-- HIDDEN OFF-SCREEN YOUTUBE IFRAME (Zero pixels visible on page) -->
+  <!-- 100% INVISIBLE BACKGROUND YOUTUBE AUDIO ENGINE -->
   <div style="position: fixed; top: -9999px; left: -9999px; width: 10px; height: 10px; overflow: hidden; pointer-events: none; z-index: -9999;">
     <iframe 
       id="yt-embed-player"
@@ -740,7 +747,7 @@
     <div class="envelope-card">
       <svg class="mandala-icon" viewBox="0 0 100 100" fill="none">
         <circle cx="50" cy="50" r="46" stroke="#DFBA73" stroke-width="1.5" stroke-dasharray="3 3"/>
-        <circle cx="50" cy="50" r="35" stroke="#DFBA73" stroke-width="1"/>
+        <circle cx="50" cy="35" stroke="#DFBA73" stroke-width="1"/>
         <path d="M50 12 L50 88 M12 50 L88 50 M23 23 L77 77 M23 77 L77 23" stroke="#DFBA73" stroke-width="0.8"/>
         <circle cx="50" cy="8" fill="#DFBA73"/>
       </svg>
@@ -776,8 +783,9 @@
         <strong>Sweety Gupta &amp; Naresh Kumar</strong>
       </div>
 
+      <!-- COUPLE PORTRAIT -->
       <div class="photo-arch-frame">
-        <img class="couple-img" src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80" alt="Ankush and Supriya" />
+        <img class="couple-img" src="couple.jpg" alt="Ankush and Supriya" onerror="this.src='https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80'" />
       </div>
 
       <h1 class="couple-title">
@@ -827,7 +835,7 @@
 
         <div class="reel-feed" id="reel-feed">
           <div class="reel-card">
-            <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80" alt="Photo 1" />
+            <img src="couple.jpg" alt="Photo 1" onerror="this.src='https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80'" />
             <div class="reel-caption-overlay">
               <span class="reel-tag">Chapter I</span>
               <div class="reel-title">The First Glimpse</div>
