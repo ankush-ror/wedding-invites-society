@@ -106,9 +106,7 @@
       font-weight: 600;
     }
 
-    /* ========================================================
-       1. ENVELOPE OVERLAY
-       ======================================================== */
+    /* 1. Wax Seal Envelope Overlay */
     #envelope-screen {
       position: fixed;
       inset: 0;
@@ -188,9 +186,7 @@
       fill: var(--royal-maroon);
     }
 
-    /* ========================================================
-       2. MAIN CONTAINER & HERO
-       ======================================================== */
+    /* 2. Main Page Layout */
     #main-content {
       width: 100%;
       max-width: 520px;
@@ -313,37 +309,6 @@
       margin-top: 4px;
     }
 
-    /* AESTHETIC EMBEDDED YOUTUBE MUSIC CARD */
-    .yt-music-box {
-      background: rgba(30, 2, 7, 0.7);
-      border: 1px solid var(--gold-primary);
-      border-radius: 16px;
-      padding: 14px;
-      margin: 25px auto 0;
-      width: 100%;
-      max-width: 380px;
-      text-align: center;
-      position: relative;
-      z-index: 2;
-      backdrop-filter: blur(8px);
-    }
-
-    .yt-music-header {
-      font-size: 0.72rem;
-      letter-spacing: 2px;
-      color: var(--gold-light);
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    .yt-player-container {
-      width: 100%;
-      height: 60px;
-      border-radius: 10px;
-      overflow: hidden;
-      border: 1px solid rgba(223, 186, 115, 0.4);
-    }
-
     .section-title {
       text-align: center;
       margin: 45px 0 16px;
@@ -369,9 +334,7 @@
       margin-top: 4px;
     }
 
-    /* ========================================================
-       3. VERTICAL REEL PHOTO FEED (SWIPE UP)
-       ======================================================== */
+    /* 3. Vertical Reels Photo Feed */
     .reel-viewport {
       position: relative;
       width: 100%;
@@ -542,9 +505,7 @@
       100% { transform: translate(-50%, -80px) scale(1); opacity: 0; }
     }
 
-    /* ========================================================
-       4. CEREMONIES TIMELINE
-       ======================================================== */
+    /* 4. Ceremonies Timeline */
     .events-flow {
       display: flex;
       flex-direction: column;
@@ -749,9 +710,22 @@
 </head>
 <body>
 
+  <!-- 100% INVISIBLE BACKGROUND YOUTUBE AUDIO ENGINE -->
+  <div style="position: fixed; top: -1000px; left: -1000px; width: 200px; height: 200px; opacity: 0.001; pointer-events: none; z-index: -999;">
+    <iframe 
+      id="yt-embed-player"
+      width="200" 
+      height="200" 
+      src="https://www.youtube.com/embed/Xg2PBy8wLyo?enablejsapi=1&loop=1&playlist=Xg2PBy8wLyo&playsinline=1&rel=0&controls=0&modestbranding=1" 
+      title="Background Music" 
+      frameborder="0" 
+      allow="autoplay; encrypted-media">
+    </iframe>
+  </div>
+
   <canvas id="fx-canvas"></canvas>
 
-  <!-- MUSIC TOGGLE PILL -->
+  <!-- FLOATING MUSIC TOGGLE PILL -->
   <div class="music-pill" id="music-btn" title="Toggle Music">
     <div class="music-bars">
       <div class="music-bar paused"></div>
@@ -828,23 +802,6 @@
         <div class="time-tile">
           <div class="tile-val" id="s">00</div>
           <div class="tile-lbl">Secs</div>
-        </div>
-      </div>
-
-      <!-- VISIBLE YOUTUBE COMPLIANT PLAYER (Plays Viah Ke Le Jana Ni) -->
-      <div class="yt-music-box">
-        <div class="yt-music-header">🎵 Wedding Song: Viah ke le jana ni</div>
-        <div class="yt-player-container">
-          <iframe 
-            id="yt-embed-player"
-            width="100%" 
-            height="60" 
-            src="https://www.youtube.com/embed/Xg2PBy8wLyo?enablejsapi=1&loop=1&playlist=Xg2PBy8wLyo&playsinline=1&rel=0&modestbranding=1" 
-            title="Wedding Song" 
-            frameborder="0" 
-            allow="autoplay; encrypted-media; picture-in-picture" 
-            allowfullscreen>
-          </iframe>
         </div>
       </div>
     </section>
@@ -1066,9 +1023,9 @@
     </div>
   </aside>
 
-  <!-- JAVASCRIPT LOGIC -->
+  <!-- JAVASCRIPT CONTROLLERS -->
   <script>
-    // 1. YOUTUBE IFRAME CONTROLLER
+    // 1. HIDDEN YOUTUBE AUDIO ENGINE
     const ytIframe = document.getElementById('yt-embed-player');
     let isMusicPlaying = false;
 
@@ -1095,6 +1052,8 @@
     }
 
     function playYouTube() {
+      sendYtCommand('unMute');
+      sendYtCommand('setVolume', [100]);
       sendYtCommand('playVideo');
       setMusicUI(true);
     }
