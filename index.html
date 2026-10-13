@@ -21,7 +21,7 @@
   <!-- Twitter Card Preview Metadata -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Ankush weds Supriya invitation" />
-  <meta name="twitter:description" content="With the blessings of Sweety Gupta &amp; Naresh Kumar. Barat &amp; Wedding on 10 November 2026 at MJ Farm, Kharar." />
+  <meta name="twitter:description" content="Barat &amp; Wedding on 10 November 2026 at MJ Farm, Kharar." />
   <meta name="twitter:image" content="https://ankushvirus007.github.io/wedding-invites/chapter4.jpg" />
 
   <!-- Google Fonts -->
@@ -57,7 +57,7 @@
       position: relative;
     }
 
-    /* Ambient Rose Petal & Gold Sparkle Canvas */
+    /* Ambient Falling Rose Petal & Gold Sparkle Canvas */
     #fx-canvas {
       position: fixed;
       top: 0;
@@ -222,21 +222,48 @@
     }
 
     .om-ganesh {
-      font-size: 0.88rem;
+      font-size: 0.95rem;
       letter-spacing: 3px;
       background: var(--gold-gradient);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       font-weight: 700;
-      margin-bottom: 16px;
+      margin-bottom: 6px;
+    }
+
+    .ganesh-mantra {
+      font-family: 'Marcellus', serif;
+      font-size: 0.82rem;
+      line-height: 1.6;
+      color: #fce4b8;
+      margin-bottom: 8px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    }
+
+    .baba-blessing {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      color: #f7dfba;
+      font-weight: 600;
+      margin-bottom: 22px;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px rgba(223, 186, 115, 0.5);
     }
 
     .parents-line {
-      font-size: 0.8rem;
-      letter-spacing: 2px;
+      font-size: 0.82rem;
+      letter-spacing: 1.8px;
       text-transform: uppercase;
       color: #fce4b8;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .parents-line strong {
+      color: #ffffff;
+      letter-spacing: 1.5px;
+      font-size: 0.95rem;
     }
 
     /* Luxury Arched Couple Frame */
@@ -272,12 +299,21 @@
 
     .couple-title {
       font-family: 'Cinzel Decorative', cursive, serif;
-      font-size: clamp(2.3rem, 9vw, 3.4rem);
+      font-size: clamp(2.2rem, 8.5vw, 3.2rem);
       font-weight: 700;
       background: var(--gold-gradient);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       line-height: 1.15;
+    }
+
+    .parentage-sub {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.76rem;
+      letter-spacing: 1px;
+      color: #f7dfba;
+      margin-top: 4px;
+      font-weight: 500;
     }
 
     .weds-script {
@@ -286,7 +322,7 @@
       font-size: clamp(2.5rem, 9vw, 3.2rem);
       color: #ffffff;
       -webkit-text-fill-color: #ffffff;
-      margin: -6px 0;
+      margin: 2px 0;
       text-shadow: 0 0 14px rgba(223, 186, 115, 0.8);
     }
 
@@ -396,6 +432,33 @@
       object-fit: cover;
       display: block;
       pointer-events: none;
+    }
+
+    .coming-soon-backdrop {
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, #42060f 0%, #150003 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .coming-soon-badge-center {
+      background: rgba(30, 2, 7, 0.85);
+      border: 1.5px solid var(--gold-primary);
+      border-radius: 30px;
+      padding: 10px 22px;
+      font-size: 0.82rem;
+      letter-spacing: 2px;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      font-weight: 700;
+      box-shadow: 0 0 20px rgba(223, 186, 115, 0.4);
+      margin-bottom: 15px;
+      animation: pulseGlow 2.5s infinite;
     }
 
     .swipe-up-badge {
@@ -658,22 +721,68 @@
       border: 1px solid var(--gold-primary);
     }
 
+    /* 5. Royal Family Greeting Footer */
     footer {
       text-align: center;
-      margin-top: 40px;
-      padding-top: 25px;
-      border-top: 1px solid rgba(223, 186, 115, 0.3);
+      margin-top: 50px;
+      padding-top: 35px;
+      border-top: 1px solid rgba(223, 186, 115, 0.35);
       position: relative;
       z-index: 2;
     }
 
-    footer .family-title {
-      font-family: 'Cinzel Decorative', serif;
-      font-size: 1.15rem;
-      background: var(--gold-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-top: 4px;
+    .invitation-card-box {
+      background: rgba(30, 2, 7, 0.75);
+      border: 1px solid rgba(223, 186, 115, 0.6);
+      border-radius: 20px;
+      padding: 26px 20px;
+      margin-bottom: 25px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      backdrop-filter: blur(8px);
+    }
+
+    .family-section-label {
+      font-size: 0.75rem;
+      letter-spacing: 2.5px;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+
+    .family-members-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .family-member-row {
+      color: #f7dfba;
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    .family-member-row strong {
+      color: #ffffff;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+    }
+
+    .family-relation {
+      display: block;
+      font-size: 0.72rem;
+      color: var(--gold-primary);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    .blessings-footer-note {
+      font-family: 'Marcellus', serif;
+      font-size: 0.88rem;
+      color: #e2cbb5;
+      font-style: italic;
+      margin-top: 18px;
     }
 
     /* Floating Sticky Bottom Thumb Bar */
@@ -789,10 +898,17 @@
     <!-- HERO SECTION -->
     <section class="hero-reel">
       <div class="om-ganesh">&#2384; Shree Ganeshaya Namah &#2384;</div>
+      <div class="ganesh-mantra">
+        वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ ।<br/>
+        निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा ॥
+      </div>
+      <div class="baba-blessing">
+        || Jai Baba Vadhbag Singh Ji ||
+      </div>
       
       <div class="parents-line">
-        Blessings from<br/>
-        <strong>Sweety Gupta &amp; Naresh Kumar</strong>
+        With the heavenly blessings of<br/>
+        <strong>Smt. Sweety Gupta &amp; Sh. Naresh Kumar</strong>
       </div>
 
       <!-- COUPLE HERO PORTRAIT -->
@@ -802,10 +918,17 @@
 
       <h1 class="couple-title">
         Ankush
-        <span class="weds-script">weds</span>
+      </h1>
+      <div class="parentage-sub">(S/o Smt. Sweety Gupta &amp; Sh. Naresh Kumar)</div>
+
+      <span class="weds-script">weds</span>
+
+      <h1 class="couple-title">
         Supriya
       </h1>
+      <div class="parentage-sub">(D/o Ms. Nirmala Devi &amp; Mr. Karamchand)</div>
 
+      <!-- COUNTDOWN TIMER -->
       <div class="countdown-grid">
         <div class="time-tile">
           <div class="tile-val" id="d">00</div>
@@ -886,13 +1009,19 @@
             </div>
           </div>
 
-          <!-- Slide 5: Chapter V (Couple Finale Slide) -->
+          <!-- Slide 5: Chapter V (Coming Soon) -->
           <div class="reel-card">
-            <img src="couple.jpg" alt="Chapter 5" onerror="this.src='https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=800&q=80'" />
+            <div class="coming-soon-backdrop">
+              <div class="coming-soon-badge-center">✨ Coming Soon ✨</div>
+              <div style="font-family:'Cinzel Decorative', serif; font-size:1.6rem; color:var(--gold-primary); margin-bottom:8px;">Together Forever</div>
+              <p style="font-size:0.8rem; color:#f0d9c4; max-width:280px; line-height:1.5;">
+                The wedding day memories are on their way! Counting down to 10 November 2026.
+              </p>
+            </div>
             <div class="reel-caption-overlay">
               <span class="reel-tag">Chapter V</span>
-              <div class="reel-title">Together Forever</div>
-              <div class="reel-desc">Counting down the days to 10 November 2026.</div>
+              <div class="reel-title">The Grand Day</div>
+              <div class="reel-desc">Photos coming soon following the wedding celebrations.</div>
             </div>
           </div>
         </div>
@@ -912,9 +1041,9 @@
           <div class="card-top-row">
             <div class="card-title-group">
               <h3>Sukhmani Sahib Path &amp; Satsang</h3>
-              <div class="event-date">Wednesday, 04 November 2026[cite: 1]</div>
+              <div class="event-date">Wednesday, 04 November 2026</div>
             </div>
-            <div class="card-time-pill">08:00 AM[cite: 1]</div>
+            <div class="card-time-pill">08:00 AM</div>
           </div>
           <div class="metadata-row">
             <span class="meta-pill">📍 Home Venue</span>
@@ -932,9 +1061,9 @@
           <div class="card-top-row">
             <div class="card-title-group">
               <h3>Shagun Ceremony</h3>
-              <div class="event-date">Thursday, 05 November 2026[cite: 1]</div>
+              <div class="event-date">Thursday, 05 November 2026</div>
             </div>
-            <div class="card-time-pill">11:00 AM[cite: 1]</div>
+            <div class="card-time-pill">11:00 AM</div>
           </div>
           <div class="metadata-row">
             <span class="meta-pill">📍 Home Venue</span>
@@ -952,9 +1081,9 @@
           <div class="card-top-row">
             <div class="card-title-group">
               <h3>DJ Night &amp; Dinner</h3>
-              <div class="event-date">Friday, 06 November 2026[cite: 1]</div>
+              <div class="event-date">Friday, 06 November 2026</div>
             </div>
-            <div class="card-time-pill">07:00 PM[cite: 1]</div>
+            <div class="card-time-pill">07:00 PM</div>
           </div>
           <div class="metadata-row">
             <span class="meta-pill">📍 Home Venue</span>
@@ -972,9 +1101,9 @@
           <div class="card-top-row">
             <div class="card-title-group">
               <h3>Traditional Jago Celebration</h3>
-              <div class="event-date">Monday, 09 November 2026[cite: 1]</div>
+              <div class="event-date">Monday, 09 November 2026</div>
             </div>
-            <div class="card-time-pill">07:00 PM[cite: 1]</div>
+            <div class="card-time-pill">07:00 PM</div>
           </div>
           <div class="metadata-row">
             <span class="meta-pill">📍 Home Venue</span>
@@ -992,9 +1121,9 @@
           <div class="card-top-row">
             <div class="card-title-group">
               <h3>Saanth &amp; Haldi Utsav</h3>
-              <div class="event-date">Tuesday, 10 November 2026[cite: 1]</div>
+              <div class="event-date">Tuesday, 10 November 2026</div>
             </div>
-            <div class="card-time-pill">10:00 AM[cite: 1]</div>
+            <div class="card-time-pill">10:00 AM</div>
           </div>
           <div class="metadata-row">
             <span class="meta-pill">📍 Home Venue</span>
@@ -1029,10 +1158,38 @@
       </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- 5. ROYAL FAMILY GREETING FOOTER -->
     <footer>
-      <div style="font-size:0.75rem; letter-spacing:2px; color:var(--gold-light); text-transform:uppercase;">Cordially Invited By</div>
-      <div class="family-title">Sweety Gupta, Naresh Kumar &amp; Family</div>
+      <div class="invitation-card-box">
+        <div class="family-section-label">Cordially Invited By</div>
+        
+        <div class="family-members-grid">
+          <!-- Parents -->
+          <div class="family-member-row">
+            <strong>Smt. Sweety Gupta &amp; Sh. Naresh Kumar</strong>
+            <span class="family-relation">Parents</span>
+          </div>
+
+          <!-- Jiju & Sister (Ordered per request) -->
+          <div class="family-member-row">
+            <strong>Rahul Kumar &amp; Nandani Mahajan</strong>
+            <span class="family-relation">Jiju &amp; Sister</span>
+          </div>
+
+          <!-- Sister -->
+          <div class="family-member-row">
+            <strong>Avantika Mahajan</strong>
+            <span class="family-relation">Sister</span>
+          </div>
+        </div>
+
+        <div class="blessings-footer-note">
+          "We eagerly await your gracious presence to bless the new beginnings of Ankush &amp; Supriya."
+        </div>
+      </div>
+
+      <div style="font-size:0.75rem; letter-spacing:2px; color:var(--gold-light); text-transform:uppercase;">With Best Compliments From</div>
+      <div class="family-title" style="margin-top:6px;">Friends &amp; Family</div>
     </footer>
   </main>
 
@@ -1217,7 +1374,7 @@
       constructor() { this.init(); }
       init() {
         this.x = Math.random() * w;
-        this.y = -15;
+        this.y = Math.random() * h;
         this.size = Math.random() * 1.8 + 0.6;
         this.vy = Math.random() * 0.6 + 0.2;
         this.alpha = Math.random() * 0.7 + 0.2;
