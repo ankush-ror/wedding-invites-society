@@ -7,17 +7,20 @@
   
   <title>Ankush weds Supriya invitation</title>
 
-  <!-- Open Graph & WhatsApp Preview Metadata -->
+  <!-- CRITICAL: Open Graph / WhatsApp Preview Meta Tags at the top of HEAD -->
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Ankush weds Supriya" />
   <meta property="og:title" content="Ankush weds Supriya invitation" />
   <meta property="og:description" content="With the blessings of Sweety Gupta &amp; Naresh Kumar. Barat &amp; Wedding on 10 November 2026 at MJ Farm, Kharar." />
   <meta property="og:url" content="https://ankushvirus007.github.io/wedding-invites/" />
-
+  
+  <!-- Direct absolute link to cover image -->
   <meta property="og:image" content="https://ankushvirus007.github.io/wedding-invites/cover.jpg" />
   <meta property="og:image:secure_url" content="https://ankushvirus007.github.io/wedding-invites/cover.jpg" />
   <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Ankush and Supriya Wedding Invitation" />
   <link rel="image_src" href="https://ankushvirus007.github.io/wedding-invites/cover.jpg" />
 
   <!-- Twitter Card Preview Metadata -->
@@ -209,7 +212,7 @@
       font-weight: 600;
     }
 
-    /* Front Pocket Triangles */
+    /* Front Pocket Geometry */
     .envelope-pocket-svg {
       position: absolute;
       bottom: 0;
@@ -1536,7 +1539,7 @@
       constructor() { this.init(); }
       init() {
         this.x = Math.random() * w;
-        this.y = Math.random() * h;
+        this.y = -15;
         this.size = Math.random() * 1.8 + 0.6;
         this.vy = Math.random() * 0.6 + 0.2;
         this.alpha = Math.random() * 0.7 + 0.2;
