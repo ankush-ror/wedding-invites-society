@@ -7,27 +7,26 @@
   
   <title>Ankush weds Supriya invitation</title>
 
-  <!-- CRITICAL: Open Graph / WhatsApp Preview Meta Tags at the top of HEAD -->
+  <!-- Open Graph & WhatsApp Preview Metadata (Configured for new URL) -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Ankush weds Supriya" />
   <meta property="og:title" content="Ankush weds Supriya invitation" />
-  <meta property="og:description" content="With the blessings of Sweety Gupta &amp; Naresh Kumar. Barat &amp; Wedding on 10 November 2026 at MJ Farm, Kharar." />
-  <meta property="og:url" content="https://ankushvirus007.github.io/wedding-invites/" />
-  
-  <!-- Direct absolute link to cover image -->
-  <meta property="og:image" content="https://ankushvirus007.github.io/wedding-invites/cover.jpg" />
-  <meta property="og:image:secure_url" content="https://ankushvirus007.github.io/wedding-invites/cover.jpg" />
+  <meta property="og:description" content="With the blessings of Sweety Gupta &amp; Naresh Kumar. Wedding celebrations in November 2026 at Kharar." />
+  <meta property="og:url" content="https://ankush-ror.github.io/wedding-invites-society/" />
+
+  <!-- Absolute HTTPS Links for Metadata Crawlers -->
+  <meta property="og:image" content="https://ankush-ror.github.io/wedding-invites-society/cover.jpg" />
+  <meta property="og:image:secure_url" content="https://ankush-ror.github.io/wedding-invites-society/cover.jpg" />
   <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Ankush and Supriya Wedding Invitation" />
-  <link rel="image_src" href="https://ankushvirus007.github.io/wedding-invites/cover.jpg" />
+  <link rel="image_src" href="https://ankush-ror.github.io/wedding-invites-society/cover.jpg" />
 
   <!-- Twitter Card Preview Metadata -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Ankush weds Supriya invitation" />
-  <meta name="twitter:description" content="Barat &amp; Wedding on 10 November 2026 at MJ Farm, Kharar." />
-  <meta name="twitter:image" content="https://ankushvirus007.github.io/wedding-invites/cover.jpg" />
+  <meta name="twitter:description" content="Wedding celebrations in November 2026 at Kharar." />
+  <meta name="twitter:image" content="https://ankush-ror.github.io/wedding-invites-society/cover.jpg" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -62,7 +61,6 @@
       position: relative;
     }
 
-    /* Ambient Rose Petal & Gold Sparkle Canvas */
     #fx-canvas {
       position: fixed;
       top: 0;
@@ -124,7 +122,7 @@
     }
 
     /* ========================================================
-       1. INSTAGRAM-STYLE 3D ROYAL ENVELOPE OPENING ANIMATION
+       1. 3D ROYAL ENVELOPE SCREEN
        ======================================================== */
     #envelope-screen {
       position: fixed;
@@ -164,7 +162,6 @@
       border: 1.5px solid var(--gold-primary);
     }
 
-    /* Royal Invitation Card inside envelope */
     .envelope-card-inner {
       position: absolute;
       top: 10px;
@@ -212,7 +209,6 @@
       font-weight: 600;
     }
 
-    /* Front Pocket Geometry */
     .envelope-pocket-svg {
       position: absolute;
       bottom: 0;
@@ -223,7 +219,6 @@
       pointer-events: none;
     }
 
-    /* 3D Top Flap */
     .envelope-top-flap {
       position: absolute;
       top: 0;
@@ -243,7 +238,6 @@
       filter: drop-shadow(0 6px 12px rgba(0,0,0,0.5));
     }
 
-    /* Gold Wax Seal Button */
     .envelope-seal {
       position: absolute;
       top: 135px;
@@ -306,7 +300,6 @@
       50% { transform: translateY(-4px); }
     }
 
-    /* Animation States when Clicked */
     .envelope-stage.is-open .envelope-seal {
       transform: translate(-50%, -50%) scale(1.4);
       opacity: 0;
@@ -325,7 +318,7 @@
     }
 
     /* ========================================================
-       2. MAIN PAGE CONTENT & SECTIONS
+       2. MAIN PAGE LAYOUT
        ======================================================== */
     #main-content {
       width: 100%;
@@ -394,7 +387,6 @@
       font-size: 0.95rem;
     }
 
-    /* Luxury Arched Couple Frame */
     .photo-arch-frame {
       width: 250px;
       height: 340px;
@@ -515,7 +507,7 @@
       margin-top: 4px;
     }
 
-    /* 3. Vertical Reels Photo Feed (Swipe Up) */
+    /* 3. VERTICAL REELS */
     .reel-viewport {
       position: relative;
       width: 100%;
@@ -718,7 +710,7 @@
       100% { transform: translate(-50%, -80px) scale(1); opacity: 0; }
     }
 
-    /* 4. Ceremonies Timeline Cards */
+    /* 4. CEREMONIES (CUSTOM SELECTION) */
     .events-flow {
       display: flex;
       flex-direction: column;
@@ -854,7 +846,7 @@
       border: 1px solid var(--gold-primary);
     }
 
-    /* 5. Royal Family Greeting Footer */
+    /* 5. ROYAL FAMILY FOOTER */
     footer {
       text-align: center;
       margin-top: 50px;
@@ -918,7 +910,7 @@
       margin-top: 18px;
     }
 
-    /* Floating Sticky Bottom Thumb Bar */
+    /* Floating Bottom Thumb Bar */
     .mobile-thumb-bar {
       position: fixed;
       bottom: 0;
@@ -999,7 +991,7 @@
   <div id="envelope-screen">
     <div class="envelope-stage" id="envelope-trigger">
       
-      <!-- Top Triangular Flap (3D Flip) -->
+      <!-- Top Triangular Flap -->
       <div class="envelope-top-flap" id="envelope-top-flap">
         <svg viewBox="0 0 320 135">
           <polygon points="0,0 320,0 160,130" fill="#540713" stroke="#dfba73" stroke-width="2"/>
@@ -1009,23 +1001,19 @@
 
       <!-- Envelope Body -->
       <div class="envelope-body">
-        
-        <!-- Royal Invitation Letter (Glides out) -->
         <div class="envelope-card-inner">
           <div class="card-seal-om">&#2384;</div>
           <div class="card-names-gold">Ankush &amp; Supriya</div>
-          <div style="font-size:0.65rem; color:#68101a; letter-spacing:2px; text-transform:uppercase; margin-top:3px;">Wedding Invitation</div>
-          <div class="card-date-gold">10 November 2026</div>
+          <div style="font-size:0.65rem; color:#68101a; letter-spacing:2px; text-transform:uppercase; margin-top:3px;">Wedding Celebrations</div>
+          <div class="card-date-gold">November 2026</div>
         </div>
 
-        <!-- Front Pocket Geometry -->
         <svg class="envelope-pocket-svg" viewBox="0 0 320 230">
           <polygon points="0,230 0,0 160,115" fill="#42050e" stroke="#c99f4d" stroke-width="1.2"/>
           <polygon points="320,230 320,0 160,115" fill="#38030b" stroke="#c99f4d" stroke-width="1.2"/>
           <polygon points="0,230 320,230 160,95" fill="#4d0611" stroke="#dfba73" stroke-width="1.5"/>
         </svg>
 
-        <!-- Gold Wax Seal Stamp Button -->
         <div class="envelope-seal" id="seal-trigger">
           <span>A &hearts; S</span>
           <small>OPEN</small>
@@ -1033,7 +1021,6 @@
       </div>
     </div>
 
-    <!-- Tap Hint Pill -->
     <div class="open-tap-pill">
       ✨ Tap Wax Seal to Open ✨
     </div>
@@ -1096,7 +1083,7 @@
       </div>
     </section>
 
-    <!-- 3. VERTICAL REEL PHOTO FEED (SWIPE UP ON MOBILE) -->
+    <!-- 3. VERTICAL REEL PHOTO FEED -->
     <section id="gallery-section">
       <div class="section-title">
         <h2>Memories</h2>
@@ -1175,11 +1162,11 @@
       </div>
     </section>
 
-    <!-- 4. CEREMONIES TIMELINE -->
+    <!-- 4. CEREMONIES (FILTERED SELECTION) -->
     <section id="events-section">
       <div class="section-title">
         <h2>Ceremonies</h2>
-        <span>Itinerary &amp; Venue Details</span>
+        <span>Itinerary &amp; Celebration Details</span>
       </div>
 
       <div class="events-flow">
@@ -1203,27 +1190,7 @@
           </div>
         </div>
 
-        <!-- 2. Shagun -->
-        <div class="event-card">
-          <div class="card-top-row">
-            <div class="card-title-group">
-              <h3>Shagun Ceremony</h3>
-              <div class="event-date">Thursday, 05 November 2026</div>
-            </div>
-            <div class="card-time-pill">11:00 AM</div>
-          </div>
-          <div class="metadata-row">
-            <span class="meta-pill">📍 Home Venue</span>
-            <span class="meta-pill attire">👗 Attire: Ethnic Festive</span>
-            <span class="meta-pill">🥥 Shagun Rituals</span>
-          </div>
-          <div class="card-actions">
-            <a class="btn-action-sm btn-map-sm" href="https://www.google.com/maps/place/Garden+Floor+Extension/@30.7484666,76.6255124,17z/data=!4m6!3m5!1s0x390ffbcc44bc1a7d:0x85469f5d5404f53!8m2!3d30.7484436!4d76.6281195!16s%2Fg%2F11s7wsmfmv" target="_blank">📍 Maps</a>
-            <a class="btn-action-sm btn-cal-sm" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Shagun+Ceremony+-+Ankush+weds+Supriya&dates=20261105T053000Z/20261105T093000Z&location=Garden+Floor+Extension,+Kharar" target="_blank">📅 Add to Calendar</a>
-          </div>
-        </div>
-
-        <!-- 3. DJ Night -->
+        <!-- 2. DJ Night -->
         <div class="event-card">
           <div class="card-top-row">
             <div class="card-title-group">
@@ -1243,69 +1210,29 @@
           </div>
         </div>
 
-        <!-- 4. Jago -->
-        <div class="event-card">
+        <!-- 3. Traditional Jago Celebration -->
+        <div class="event-card highlight">
           <div class="card-top-row">
             <div class="card-title-group">
-              <h3>Traditional Jago Celebration</h3>
-              <div class="event-date">Monday, 09 November 2026</div>
+              <h3 style="color:#6b0b1a;">Traditional Jago Celebration</h3>
+              <div class="event-date" style="color:#aa771c;">Monday, 09 November 2026</div>
             </div>
             <div class="card-time-pill">07:00 PM</div>
           </div>
           <div class="metadata-row">
-            <span class="meta-pill">📍 Home Venue</span>
+            <span class="meta-pill" style="background:#fce2b8;">📍 Home Venue</span>
             <span class="meta-pill attire">👗 Attire: Vibrant Punjabi Attire</span>
             <span class="meta-pill">🪔 Jago Toli &amp; Giddha</span>
           </div>
           <div class="card-actions">
-            <a class="btn-action-sm btn-map-sm" href="https://www.google.com/maps/place/Garden+Floor+Extension/@30.7484666,76.6255124,17z/data=!4m6!3m5!1s0x390ffbcc44bc1a7d:0x85469f5d5404f53!8m2!3d30.7484436!4d76.6281195!16s%2Fg%2F11s7wsmfmv" target="_blank">📍 Maps</a>
+            <a class="btn-action-sm btn-map-sm" style="background:#aa771c; color:#fff;" href="https://www.google.com/maps/place/Garden+Floor+Extension/@30.7484666,76.6255124,17z/data=!4m6!3m5!1s0x390ffbcc44bc1a7d:0x85469f5d5404f53!8m2!3d30.7484436!4d76.6281195!16s%2Fg%2F11s7wsmfmv" target="_blank">📍 Navigate Venue</a>
             <a class="btn-action-sm btn-cal-sm" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Jago+Night+-+Ankush+weds+Supriya&dates=20261109T133000Z/20261109T173000Z&location=Garden+Floor+Extension,+Kharar" target="_blank">📅 Add to Calendar</a>
-          </div>
-        </div>
-
-        <!-- 5. Haldi -->
-        <div class="event-card">
-          <div class="card-top-row">
-            <div class="card-title-group">
-              <h3>Saanth &amp; Haldi Utsav</h3>
-              <div class="event-date">Tuesday, 10 November 2026</div>
-            </div>
-            <div class="card-time-pill">10:00 AM</div>
-          </div>
-          <div class="metadata-row">
-            <span class="meta-pill">📍 Home Venue</span>
-            <span class="meta-pill attire">👗 Attire: Haldi Yellow</span>
-            <span class="meta-pill">🌼 Flower Shower</span>
-          </div>
-          <div class="card-actions">
-            <a class="btn-action-sm btn-map-sm" href="https://www.google.com/maps/place/Garden+Floor+Extension/@30.7484666,76.6255124,17z/data=!4m6!3m5!1s0x390ffbcc44bc1a7d:0x85469f5d5404f53!8m2!3d30.7484436!4d76.6281195!16s%2Fg%2F11s7wsmfmv" target="_blank">📍 Maps</a>
-            <a class="btn-action-sm btn-cal-sm" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Saanth+and+Haldi+-+Ankush+weds+Supriya&dates=20261110T043000Z/20261110T083000Z&location=Garden+Floor+Extension,+Kharar" target="_blank">📅 Add to Calendar</a>
-          </div>
-        </div>
-
-        <!-- 6. Barat (Main Ceremony) -->
-        <div class="event-card highlight">
-          <div class="card-top-row">
-            <div class="card-title-group">
-              <h3 style="color:#6b0b1a;">Barat &amp; Grand Wedding</h3>
-              <div class="event-date" style="color:#aa771c;">Tuesday, 10 November 2026</div>
-            </div>
-            <div class="card-time-pill">06:00 PM</div>
-          </div>
-          <div class="metadata-row">
-            <span class="meta-pill" style="background:#fce2b8;">📍 MJ Farm, Badala Road</span>
-            <span class="meta-pill attire">👑 Attire: Royal Formal</span>
-            <span class="meta-pill">✨ Grand Varmala &amp; Dinner</span>
-          </div>
-          <div class="card-actions">
-            <a class="btn-action-sm btn-map-sm" style="background:#aa771c; color:#fff;" href="https://www.google.com/maps/search/?api=1&query=Mj+farm+badala+road+sahibzada+ajit+singh+nagar+kharar+punjab" target="_blank">📍 Navigate Venue</a>
-            <a class="btn-action-sm btn-cal-sm" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Barat+and+Wedding+-+Ankush+weds+Supriya&dates=20261110T123000Z/20261110T183000Z&location=Mj+farm+badala+road+sahibzada+ajit+singh+nagar+kharar+punjab" target="_blank">📅 Add to Calendar</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 5. ROYAL FAMILY GREETING FOOTER -->
+    <!-- 5. ROYAL FAMILY FOOTER -->
     <footer>
       <div class="invitation-card-box">
         <div class="family-section-label">Cordially Invited By</div>
@@ -1346,8 +1273,8 @@
       <a class="thumb-btn btn-rsvp" href="https://wa.me/917889430245?text=Congratulations%20to%20Ankush%20and%20Supriya!%20We%20will%20delightfully%20join%20the%20wedding%20celebrations." target="_blank">
         💬 WhatsApp RSVP
       </a>
-      <a class="thumb-btn btn-venue-quick" href="https://www.google.com/maps/search/?api=1&query=Mj+farm+badala+road+sahibzada+ajit+singh+nagar+kharar+punjab" target="_blank">
-        📍 Wedding Venue
+      <a class="thumb-btn btn-venue-quick" href="https://www.google.com/maps/place/Garden+Floor+Extension/@30.7484666,76.6255124,17z/data=!4m6!3m5!1s0x390ffbcc44bc1a7d:0x85469f5d5404f53!8m2!3d30.7484436!4d76.6281195!16s%2Fg%2F11s7wsmfmv" target="_blank">
+        📍 Venue Location
       </a>
     </div>
   </aside>
@@ -1402,7 +1329,7 @@
 
     document.getElementById('music-btn').addEventListener('click', toggleMusic);
 
-    // 2. 3D ENVELOPE OPENING ANIMATION (INSTAGRAM STYLE)
+    // 2. 3D ENVELOPE OPENING ANIMATION
     const envelopeScreen = document.getElementById('envelope-screen');
     const envelopeStage = document.getElementById('envelope-trigger');
     let isEnvelopeOpened = false;
@@ -1411,16 +1338,10 @@
       if (isEnvelopeOpened) return;
       isEnvelopeOpened = true;
 
-      // 1. Start Music
       playYouTube();
-
-      // 2. Animate 3D Envelope (Flap flips open, Card glides up)
       envelopeStage.classList.add('is-open');
-
-      // 3. Trigger Rose Petals & Gold Burst explosion
       burstFXParticles();
 
-      // 4. Reveal Main Website smoothly
       setTimeout(() => {
         envelopeScreen.classList.add('opened');
       }, 1200);
@@ -1428,7 +1349,7 @@
 
     envelopeStage.addEventListener('click', triggerEnvelopeOpen);
 
-    // 3. REEL CONTROLLER (SWIPE UP / DOWN)
+    // 3. REEL CONTROLLER
     const reelFeed = document.getElementById('reel-feed');
     const reelViewport = document.getElementById('reel-viewport');
     const btnReelUp = document.getElementById('btn-reel-up');
@@ -1480,7 +1401,7 @@
     setInterval(updateTimer, 1000);
     updateTimer();
 
-    // 5. SCROLL OBSERVER FOR CARDS
+    // 5. SCROLL OBSERVER
     const cards = document.querySelectorAll('.event-card');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
@@ -1539,7 +1460,7 @@
       constructor() { this.init(); }
       init() {
         this.x = Math.random() * w;
-        this.y = -15;
+        this.y = Math.random() * h;
         this.size = Math.random() * 1.8 + 0.6;
         this.vy = Math.random() * 0.6 + 0.2;
         this.alpha = Math.random() * 0.7 + 0.2;
