@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
   <meta name="theme-color" content="#3a040b" />
   
-  <title>Ankush weds Supriya</title>
+  <title>Ankush weds Supriya invitation</title>
 
-  <!-- Open Graph & WhatsApp Preview Metadata (Landscape Cover) -->
+  <!-- Open Graph & WhatsApp Preview Metadata -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Ankush weds Supriya invitation" />
   <meta property="og:description" content="With the blessings of Sweety Gupta &amp; Naresh Kumar. Barat &amp; Wedding on 10 November 2026 at MJ Farm, Kharar." />
@@ -120,87 +120,210 @@
       font-weight: 600;
     }
 
-    /* 1. Wax Seal Envelope Overlay */
+    /* ========================================================
+       1. INSTAGRAM-STYLE 3D ROYAL ENVELOPE OPENING ANIMATION
+       ======================================================== */
     #envelope-screen {
       position: fixed;
       inset: 0;
       z-index: 1000;
-      background: radial-gradient(circle at center, #630815 0%, #1e0004 100%);
+      background: radial-gradient(circle at center, #42060f 0%, #150003 100%);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       padding: 20px;
-      transition: transform 0.9s cubic-bezier(0.85, 0, 0.15, 1), opacity 0.8s ease;
+      perspective: 1200px;
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
 
     #envelope-screen.opened {
-      transform: translateY(-100%);
+      opacity: 0;
+      transform: scale(1.1);
+      pointer-events: none;
+      transition-delay: 1.3s;
+    }
+
+    .envelope-stage {
+      position: relative;
+      width: 320px;
+      height: 230px;
+      cursor: pointer;
+    }
+
+    .envelope-body {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(145deg, #4d050f 0%, #2b0207 100%);
+      border-radius: 0 0 16px 16px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 35px rgba(223, 186, 115, 0.3);
+      border: 1.5px solid var(--gold-primary);
+    }
+
+    /* Royal Invitation Card inside envelope */
+    .envelope-card-inner {
+      position: absolute;
+      top: 10px;
+      left: 14px;
+      right: 14px;
+      height: 200px;
+      background: linear-gradient(135deg, #fffcf5 0%, #faedd7 100%);
+      border-radius: 12px;
+      border: 1px solid var(--gold-primary);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 15px;
+      z-index: 2;
+      transition: transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) 0.35s;
+    }
+
+    .card-seal-om {
+      font-size: 1.1rem;
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .card-names-gold {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.15rem;
+      color: var(--royal-maroon);
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .card-date-gold {
+      font-family: 'Marcellus', serif;
+      font-size: 0.78rem;
+      color: #8c5d1b;
+      margin-top: 6px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    /* Front Pocket Triangles */
+    .envelope-pocket-svg {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    /* 3D Top Flap */
+    .envelope-top-flap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 135px;
+      transform-origin: top center;
+      transform-style: preserve-3d;
+      transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 4;
+    }
+
+    .envelope-top-flap svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.5));
+    }
+
+    /* Gold Wax Seal Button */
+    .envelope-seal {
+      position: absolute;
+      top: 135px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--gold-gradient);
+      box-shadow: 0 4px 20px rgba(223, 186, 115, 0.85), inset 0 2px 4px rgba(255, 255, 255, 0.8);
+      border: 2px solid #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 5;
+      transition: transform 0.35s ease, opacity 0.35s ease;
+      animation: pulseSeal 2s infinite ease-in-out;
+    }
+
+    @keyframes pulseSeal {
+      0%, 100% { transform: translate(-50%, -50%) scale(1); box-shadow: 0 0 15px rgba(223, 186, 115, 0.5); }
+      50% { transform: translate(-50%, -50%) scale(1.06); box-shadow: 0 0 28px rgba(254, 240, 199, 0.95); }
+    }
+
+    .envelope-seal span {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #3f0309;
+      line-height: 1;
+    }
+
+    .envelope-seal small {
+      font-size: 0.5rem;
+      letter-spacing: 1px;
+      color: #4a050f;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+
+    .open-tap-pill {
+      margin-top: 36px;
+      background: rgba(30, 2, 7, 0.85);
+      border: 1px solid var(--gold-primary);
+      padding: 10px 22px;
+      border-radius: 25px;
+      color: var(--gold-light);
+      font-size: 0.76rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+      animation: floatHint 2.2s infinite ease-in-out;
+    }
+
+    @keyframes floatHint {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+
+    /* Animation States when Clicked */
+    .envelope-stage.is-open .envelope-seal {
+      transform: translate(-50%, -50%) scale(1.4);
       opacity: 0;
       pointer-events: none;
     }
 
-    .envelope-card {
-      width: 100%;
-      max-width: 380px;
-      background: linear-gradient(160deg, #7c0e1f 0%, #4a050f 100%);
-      border: 1.5px solid var(--gold-primary);
-      border-radius: 24px;
-      padding: 40px 20px;
-      text-align: center;
-      position: relative;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+    .envelope-stage.is-open .envelope-top-flap {
+      transform: rotateX(180deg);
+      z-index: 1;
     }
 
-    .envelope-card::before {
-      content: "";
-      position: absolute;
-      inset: 8px;
-      border: 1px dashed rgba(254, 240, 199, 0.4);
-      border-radius: 16px;
-      pointer-events: none;
+    .envelope-stage.is-open .envelope-card-inner {
+      transform: translateY(-120px);
+      z-index: 6;
+      box-shadow: 0 25px 45px rgba(0,0,0,0.6);
     }
 
-    .mandala-icon {
-      width: 72px;
-      height: 72px;
-      margin: 0 auto 12px;
-      animation: spinMandala 35s linear infinite;
-    }
-
-    @keyframes spinMandala {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    .seal-btn {
-      width: 82px;
-      height: 82px;
-      border-radius: 50%;
-      background: var(--gold-gradient);
-      margin: 26px auto 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 0 25px rgba(254, 240, 199, 0.8);
-      animation: pulseGlow 2s infinite ease-in-out;
-      border: 2px solid #ffffff;
-      outline: none;
-    }
-
-    @keyframes pulseGlow {
-      0%, 100% { transform: scale(1); box-shadow: 0 0 16px rgba(223, 186, 115, 0.5); }
-      50% { transform: scale(1.06); box-shadow: 0 0 32px rgba(254, 240, 199, 0.95); }
-    }
-
-    .seal-btn svg {
-      width: 42px;
-      height: 42px;
-      fill: var(--royal-maroon);
-    }
-
-    /* 2. Main Page Layout */
+    /* ========================================================
+       2. MAIN PAGE CONTENT & SECTIONS
+       ======================================================== */
     #main-content {
       width: 100%;
       max-width: 520px;
@@ -461,6 +584,11 @@
       box-shadow: 0 0 20px rgba(223, 186, 115, 0.4);
       margin-bottom: 15px;
       animation: pulseGlow 2.5s infinite;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 16px rgba(223, 186, 115, 0.5); }
+      50% { transform: scale(1.06); box-shadow: 0 0 32px rgba(254, 240, 199, 0.95); }
     }
 
     .swipe-up-badge {
@@ -864,33 +992,47 @@
     <span class="music-label" id="music-label">Muted</span>
   </div>
 
-  <!-- 1. WAX SEAL OPENING OVERLAY -->
+  <!-- 1. INSTAGRAM 3D ROYAL ENVELOPE SCREEN -->
   <div id="envelope-screen">
-    <div class="envelope-card">
-      <svg class="mandala-icon" viewBox="0 0 100 100" fill="none">
-        <circle cx="50" cy="50" r="46" stroke="#DFBA73" stroke-width="1.5" stroke-dasharray="3 3"/>
-        <circle cx="50" cy="35" stroke="#DFBA73" stroke-width="1"/>
-        <path d="M50 12 L50 88 M12 50 L88 50 M23 23 L77 77 M23 77 L77 23" stroke="#DFBA73" stroke-width="0.8"/>
-        <circle cx="50" cy="8" fill="#DFBA73"/>
-      </svg>
-
-      <div style="font-size: 0.72rem; letter-spacing: 3px; color: var(--gold-light); text-transform: uppercase;">
-        Auspicious Wedding Invitation
-      </div>
-
-      <div style="font-family: 'Cinzel Decorative', serif; font-size: 1.55rem; color: #FFF; margin: 10px 0 4px; font-weight:700;">
-        Ankush &amp; Supriya
-      </div>
-
-      <button class="seal-btn" id="seal-trigger" aria-label="Open Invitation">
-        <svg viewBox="0 0 24 24">
-          <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+    <div class="envelope-stage" id="envelope-trigger">
+      
+      <!-- Top Triangular Flap (3D Flip) -->
+      <div class="envelope-top-flap" id="envelope-top-flap">
+        <svg viewBox="0 0 320 135">
+          <polygon points="0,0 320,0 160,130" fill="#540713" stroke="#dfba73" stroke-width="2"/>
+          <polygon points="12,5 308,5 160,120" fill="none" stroke="rgba(254, 240, 199, 0.4)" stroke-dasharray="3 3"/>
         </svg>
-      </button>
-
-      <div style="color: var(--gold-light); font-size: 0.78rem; letter-spacing: 2.5px; text-transform: uppercase;">
-        Tap Seal to Open
       </div>
+
+      <!-- Envelope Body -->
+      <div class="envelope-body">
+        
+        <!-- Royal Invitation Letter (Glides out) -->
+        <div class="envelope-card-inner">
+          <div class="card-seal-om">&#2384;</div>
+          <div class="card-names-gold">Ankush &amp; Supriya</div>
+          <div style="font-size:0.65rem; color:#68101a; letter-spacing:2px; text-transform:uppercase; margin-top:3px;">Wedding Invitation</div>
+          <div class="card-date-gold">10 November 2026</div>
+        </div>
+
+        <!-- Front Pocket Geometry -->
+        <svg class="envelope-pocket-svg" viewBox="0 0 320 230">
+          <polygon points="0,230 0,0 160,115" fill="#42050e" stroke="#c99f4d" stroke-width="1.2"/>
+          <polygon points="320,230 320,0 160,115" fill="#38030b" stroke="#c99f4d" stroke-width="1.2"/>
+          <polygon points="0,230 320,230 160,95" fill="#4d0611" stroke="#dfba73" stroke-width="1.5"/>
+        </svg>
+
+        <!-- Gold Wax Seal Stamp Button -->
+        <div class="envelope-seal" id="seal-trigger">
+          <span>A &hearts; S</span>
+          <small>OPEN</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tap Hint Pill -->
+    <div class="open-tap-pill">
+      ✨ Tap Wax Seal to Open ✨
     </div>
   </div>
 
@@ -1257,15 +1399,33 @@
 
     document.getElementById('music-btn').addEventListener('click', toggleMusic);
 
-    // Wax Seal tap unlocks audio and plays YouTube track
-    const sealBtn = document.getElementById('seal-trigger');
-    const envelope = document.getElementById('envelope-screen');
-    sealBtn.addEventListener('click', () => {
-      playYouTube();
-      envelope.classList.add('opened');
-    });
+    // 2. 3D ENVELOPE OPENING ANIMATION (INSTAGRAM STYLE)
+    const envelopeScreen = document.getElementById('envelope-screen');
+    const envelopeStage = document.getElementById('envelope-trigger');
+    let isEnvelopeOpened = false;
 
-    // 2. REEL CONTROLLER (SWIPE UP / DOWN)
+    function triggerEnvelopeOpen() {
+      if (isEnvelopeOpened) return;
+      isEnvelopeOpened = true;
+
+      // 1. Start Music
+      playYouTube();
+
+      // 2. Animate 3D Envelope (Flap flips open, Card glides up)
+      envelopeStage.classList.add('is-open');
+
+      // 3. Trigger Rose Petals & Gold Burst explosion
+      burstFXParticles();
+
+      // 4. Reveal Main Website smoothly
+      setTimeout(() => {
+        envelopeScreen.classList.add('opened');
+      }, 1200);
+    }
+
+    envelopeStage.addEventListener('click', triggerEnvelopeOpen);
+
+    // 3. REEL CONTROLLER (SWIPE UP / DOWN)
     const reelFeed = document.getElementById('reel-feed');
     const reelViewport = document.getElementById('reel-viewport');
     const btnReelUp = document.getElementById('btn-reel-up');
@@ -1302,7 +1462,7 @@
     btnLike.addEventListener('click', spawnHeartEffect);
     reelFeed.addEventListener('dblclick', spawnHeartEffect);
 
-    // 3. COUNTDOWN TIMER (10 Nov 2026, 06:00 PM IST)
+    // 4. COUNTDOWN TIMER (10 Nov 2026, 06:00 PM IST)
     const weddingDate = new Date('2026-11-10T18:00:00+05:30').getTime();
     function updateTimer() {
       const now = new Date().getTime();
@@ -1317,7 +1477,7 @@
     setInterval(updateTimer, 1000);
     updateTimer();
 
-    // 4. SCROLL OBSERVER FOR CARDS
+    // 5. SCROLL OBSERVER FOR CARDS
     const cards = document.querySelectorAll('.event-card');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
@@ -1326,7 +1486,7 @@
     }, { threshold: 0.12 });
     cards.forEach(card => observer.observe(card));
 
-    // 5. PETAL & GOLD PARTICLES ENGINE
+    // 6. PETAL & GOLD PARTICLES ENGINE
     const canvas = document.getElementById('fx-canvas');
     const ctx = canvas.getContext('2d');
     let w = canvas.width = window.innerWidth;
@@ -1376,7 +1536,7 @@
       constructor() { this.init(); }
       init() {
         this.x = Math.random() * w;
-        this.y = -15;
+        this.y = Math.random() * h;
         this.size = Math.random() * 1.8 + 0.6;
         this.vy = Math.random() * 0.6 + 0.2;
         this.alpha = Math.random() * 0.7 + 0.2;
@@ -1402,6 +1562,16 @@
     const fxItems = [];
     for (let i = 0; i < TOTAL_PETALS; i++) fxItems.push(new Petal());
     for (let i = 0; i < TOTAL_DUST; i++) fxItems.push(new GoldDust());
+
+    function burstFXParticles() {
+      for (let i = 0; i < 20; i++) {
+        const p = new Petal();
+        p.y = h / 2 + (Math.random() * 80 - 40);
+        p.x = w / 2 + (Math.random() * 120 - 60);
+        p.vy = Math.random() * 3 + 1.5;
+        fxItems.push(p);
+      }
+    }
 
     function loopFX() {
       ctx.clearRect(0, 0, w, h);
