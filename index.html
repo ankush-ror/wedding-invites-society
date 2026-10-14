@@ -7,14 +7,14 @@
   
   <title>Ankush weds Supriya invitation</title>
 
-  <!-- Open Graph & WhatsApp Preview Metadata -->
+  <!-- Open Graph & WhatsApp Preview Metadata (Configured for Society URL) -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Ankush weds Supriya" />
   <meta property="og:title" content="Ankush weds Supriya invitation" />
   <meta property="og:description" content="With the blessings of Sweety Gupta &amp; Naresh Kumar. Wedding celebrations in November 2026 at Kharar." />
   <meta property="og:url" content="https://ankush-ror.github.io/wedding-invites-society/" />
 
-  <!-- Absolute HTTPS Links for Metadata Crawlers -->
+  <!-- Absolute HTTPS Links for Social Media Crawlers -->
   <meta property="og:image" content="https://ankush-ror.github.io/wedding-invites-society/cover.jpg" />
   <meta property="og:image:secure_url" content="https://ankush-ror.github.io/wedding-invites-society/cover.jpg" />
   <meta property="og:image:type" content="image/jpeg" />
@@ -41,7 +41,7 @@
       --royal-maroon: #4a050f;
       --deep-crimson: #1f0105;
       --card-glass: rgba(255, 255, 255, 0.96);
-      --dark-glass: rgba(30, 2, 7, 0.85);
+      --dark-glass: rgba(30, 2, 7, 0.88);
       --safe-bottom: env(safe-area-inset-bottom, 16px);
     }
 
@@ -72,22 +72,72 @@
       z-index: 995;
     }
 
-    /* Floating Top Music Equalizer Pill */
-    .music-pill {
+    /* Floating Top Action Bar: Music Pill + Compact Share on Far Right */
+    .top-action-bar {
       position: fixed;
-      top: 18px;
-      right: 18px;
+      top: 16px;
+      right: 16px;
       z-index: 999;
-      background: rgba(30, 2, 7, 0.92);
-      border: 1px solid var(--gold-primary);
-      border-radius: 30px;
-      padding: 8px 14px;
       display: flex;
       align-items: center;
       gap: 8px;
+    }
+
+    .top-pill-btn {
+      background: rgba(30, 2, 7, 0.92);
+      border: 1px solid var(--gold-primary);
+      border-radius: 30px;
+      padding: 7px 12px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
       cursor: pointer;
       backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      color: var(--gold-light);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      outline: none;
+      transition: transform 0.2s;
+    }
+
+    .top-pill-btn:active {
+      transform: scale(0.92);
+    }
+
+    /* Compact Circular Share Button on the Far Right */
+    .top-icon-btn {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(30, 2, 7, 0.92);
+      border: 1px solid var(--gold-primary);
+      color: var(--gold-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      outline: none;
+      padding: 0;
+      flex-shrink: 0;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .top-icon-btn:active {
+      transform: scale(0.9);
+    }
+
+    .top-icon-btn svg {
+      width: 15px;
+      height: 15px;
+      stroke: var(--gold-primary);
     }
 
     .music-bars {
@@ -114,12 +164,41 @@
       100% { height: 100%; }
     }
 
-    .music-label {
-      font-size: 0.7rem;
+    /* Floating Scroll to Top Arrow Button */
+    .scroll-top-btn {
+      position: fixed;
+      bottom: calc(76px + var(--safe-bottom));
+      right: 18px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(30, 2, 7, 0.92);
+      border: 1.5px solid var(--gold-primary);
       color: var(--gold-light);
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6), 0 0 12px rgba(223, 186, 115, 0.3);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(18px) scale(0.9);
+      transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s;
+      z-index: 997;
+      outline: none;
+    }
+
+    .scroll-top-btn.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
+    }
+
+    .scroll-top-btn:active {
+      transform: scale(0.9);
     }
 
     /* 1. 3D ROYAL ENVELOPE SCREEN */
@@ -341,41 +420,48 @@
       z-index: 2;
     }
 
-    /* ROYAL GANESH JI GOLD MEDALLION */
-    .ganesh-medallion {
-      width: 82px;
-      height: 82px;
+    /* TRADITIONAL SHREE GANESH JI CIRCULAR MEDALLION */
+    .ganesh-circle-frame {
+      width: 118px;
+      height: 118px;
       border-radius: 50%;
-      background: radial-gradient(circle, #5e0813 0%, #260105 100%);
-      border: 2px solid var(--gold-primary);
-      padding: 6px;
-      box-shadow: 0 0 25px rgba(223, 186, 115, 0.45), inset 0 0 12px rgba(223, 186, 115, 0.35);
-      margin: 0 auto 14px;
+      background: radial-gradient(circle, #630815 0%, #200105 100%);
+      border: 3px solid #dfba73;
+      outline: 2px dashed rgba(254, 240, 199, 0.6);
+      outline-offset: -6px;
+      padding: 5px;
+      box-shadow: 0 0 28px rgba(223, 186, 115, 0.55), inset 0 0 14px rgba(223, 186, 115, 0.4);
+      margin: 0 auto 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      animation: ganeshGlow 3s infinite alternate ease-in-out;
+      overflow: hidden;
+      animation: ganeshAura 3.5s infinite alternate ease-in-out;
     }
 
-    @keyframes ganeshGlow {
-      0% { box-shadow: 0 0 15px rgba(223, 186, 115, 0.3); transform: scale(1); }
-      100% { box-shadow: 0 0 28px rgba(254, 240, 199, 0.7); transform: scale(1.04); }
+    @keyframes ganeshAura {
+      0% { box-shadow: 0 0 16px rgba(223, 186, 115, 0.4); transform: scale(1); }
+      100% { box-shadow: 0 0 32px rgba(254, 240, 199, 0.85); transform: scale(1.04); }
     }
 
-    .ganesh-svg-art {
+    .ganesh-circle-img {
       width: 100%;
       height: 100%;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6));
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
     }
 
-    .om-ganesh {
-      font-size: 0.95rem;
-      letter-spacing: 3px;
+    .ganesh-hindi-script {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.15rem;
+      letter-spacing: 2px;
       background: var(--gold-gradient);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       font-weight: 700;
       margin-bottom: 6px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.6);
     }
 
     .ganesh-mantra {
@@ -549,11 +635,12 @@
       text-align: center;
       backdrop-filter: blur(10px);
       box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+      position: relative;
     }
 
     .profile-avatar-frame {
-      width: 78px;
-      height: 78px;
+      width: 82px;
+      height: 82px;
       margin: 0 auto 10px;
       border-radius: 50%;
       border: 2px solid var(--gold-primary);
@@ -793,13 +880,67 @@
       100% { transform: translate(-50%, -80px) scale(1); opacity: 0; }
     }
 
-    /* 4. FUNCTION CARDS WITH THEMED BANNERS */
+    /* ========================================================
+       4. SCROLL ENTRANCE 3D REVEAL & FIT SETTINGS
+       ======================================================== */
     .events-flow {
       display: flex;
       flex-direction: column;
       gap: 24px;
       position: relative;
       z-index: 2;
+    }
+
+    /* 3D Card Animation for every major block */
+    .event-card,
+    .profile-card,
+    .hashtag-card,
+    .guide-card,
+    .invitation-card-box {
+      opacity: 0;
+      transform: perspective(900px) rotateX(15deg) translateY(50px) scale(0.92);
+      filter: blur(4px);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+                  filter 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                  box-shadow 0.8s ease;
+      will-change: opacity, transform, filter;
+    }
+
+    .event-card.in-view,
+    .profile-card.in-view,
+    .hashtag-card.in-view,
+    .guide-card.in-view,
+    .invitation-card-box.in-view {
+      opacity: 1;
+      transform: perspective(900px) rotateX(0deg) translateY(0) scale(1);
+      filter: blur(0);
+    }
+
+    /* Gold Shimmer Sweep across card on arrival */
+    .event-card.in-view::after {
+      content: "";
+      position: absolute;
+      top: -40%;
+      left: -80%;
+      width: 55%;
+      height: 180%;
+      background: linear-gradient(
+        65deg,
+        transparent,
+        rgba(255, 255, 255, 0.15) 35%,
+        rgba(254, 240, 199, 0.4) 50%,
+        transparent 70%
+      );
+      transform: rotate(25deg);
+      animation: cardShimmerFlare 1.3s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+      pointer-events: none;
+    }
+
+    @keyframes cardShimmerFlare {
+      0% { left: -80%; opacity: 0; }
+      20% { opacity: 1; }
+      100% { left: 140%; opacity: 0; }
     }
 
     .event-card {
@@ -810,14 +951,6 @@
       box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
       position: relative;
       overflow: hidden;
-      transform: translateY(15px);
-      opacity: 0;
-      transition: all 0.5s ease-out;
-    }
-
-    .event-card.in-view {
-      transform: translateY(0);
-      opacity: 1;
     }
 
     .event-card.highlight {
@@ -826,12 +959,13 @@
       box-shadow: 0 16px 40px rgba(191, 149, 63, 0.45);
     }
 
-    /* Top Visual Banner for each function */
+    /* 195px BANNER HEIGHT WITH PRECISE JAGO ALIGNMENT */
     .event-banner-wrap {
       position: relative;
       width: 100%;
-      height: 140px;
+      height: 195px;
       overflow: hidden;
+      background: #230206;
     }
 
     .event-banner-img {
@@ -846,18 +980,23 @@
       transform: scale(1.05);
     }
 
+    .banner-jago {
+      object-position: center 25% !important;
+    }
+
     .event-banner-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.15) 60%, transparent 100%);
+      background: linear-gradient(to top, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
       padding: 12px 16px;
+      pointer-events: none;
     }
 
     .event-badge-tag {
-      background: rgba(30, 2, 7, 0.85);
+      background: rgba(30, 2, 7, 0.88);
       border: 1px solid var(--gold-primary);
       color: var(--gold-light);
       font-size: 0.65rem;
@@ -889,11 +1028,19 @@
       line-height: 1.25;
     }
 
+    .card-title-group .event-subheading {
+      font-family: 'Marcellus', serif;
+      font-size: 0.8rem;
+      color: #9c6c28;
+      font-style: italic;
+      margin-top: 2px;
+    }
+
     .card-title-group .event-date {
       font-size: 0.8rem;
       color: #8c5d1b;
       font-weight: 600;
-      margin-top: 3px;
+      margin-top: 4px;
     }
 
     .card-time-pill {
@@ -910,6 +1057,13 @@
     .event-card.highlight .card-time-pill {
       background: #aa771c;
       color: #fff;
+    }
+
+    .card-ritual-desc {
+      font-size: 0.78rem;
+      color: #554135;
+      line-height: 1.5;
+      margin-top: 10px;
     }
 
     .metadata-row {
@@ -972,7 +1126,7 @@
       border: 1px solid var(--gold-primary);
     }
 
-    /* 5. LUXURY HASHTAG & CELEBRATION CARD */
+    /* 5. HASHTAG CARD */
     .hashtag-card {
       background: linear-gradient(135deg, rgba(74, 5, 15, 0.9) 0%, rgba(31, 1, 5, 0.95) 100%);
       border: 1.5px solid var(--gold-primary);
@@ -982,6 +1136,7 @@
       margin: 30px 0;
       box-shadow: 0 10px 30px rgba(0,0,0,0.6);
       backdrop-filter: blur(8px);
+      position: relative;
     }
 
     .hashtag-title {
@@ -1005,9 +1160,10 @@
       background: var(--card-glass);
       border-radius: 20px;
       padding: 22px 18px;
-      border: 1px solid rgba(223, 186, 115, 0.6);
+      border: 1.5px solid rgba(223, 186, 115, 0.6);
       box-shadow: 0 10px 28px rgba(0,0,0,0.4);
       margin-bottom: 30px;
+      position: relative;
     }
 
     .guide-header {
@@ -1057,6 +1213,7 @@
       margin-bottom: 25px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.5);
       backdrop-filter: blur(8px);
+      position: relative;
     }
 
     .family-section-label {
@@ -1103,7 +1260,7 @@
       margin-top: 18px;
     }
 
-    /* Floating Bottom Thumb Bar */
+    /* Floating Bottom Thumb Bar (Society Destination) */
     .mobile-thumb-bar {
       position: fixed;
       bottom: 0;
@@ -1155,7 +1312,7 @@
 </head>
 <body>
 
-  <!-- INVISIBLE BACKGROUND YOUTUBE ENGINE -->
+  <!-- INVISIBLE BACKGROUND YOUTUBE AUDIO ENGINE -->
   <div style="position: fixed; top: -9999px; left: -9999px; width: 10px; height: 10px; overflow: hidden; pointer-events: none; z-index: -9999;">
     <iframe 
       id="yt-embed-player"
@@ -1170,15 +1327,32 @@
 
   <canvas id="fx-canvas"></canvas>
 
-  <!-- FLOATING MUSIC TOGGLE PILL -->
-  <div class="music-pill" id="music-btn" title="Toggle Music">
-    <div class="music-bars">
-      <div class="music-bar paused"></div>
-      <div class="music-bar paused"></div>
-      <div class="music-bar paused"></div>
+  <!-- FLOATING TOP CONTROLS: MUSIC PILL + COMPACT CIRCULAR SHARE BUTTON ON FAR RIGHT -->
+  <div class="top-action-bar">
+    <div class="top-pill-btn" id="music-btn" title="Toggle Music">
+      <div class="music-bars">
+        <div class="music-bar paused"></div>
+        <div class="music-bar paused"></div>
+        <div class="music-bar paused"></div>
+      </div>
+      <span id="music-label">Muted</span>
     </div>
-    <span class="music-label" id="music-label">Muted</span>
+
+    <button class="top-icon-btn" id="share-btn" title="Share Invitation" aria-label="Share">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="18" cy="5" r="3"></circle>
+        <circle cx="6" cy="12" r="3"></circle>
+        <circle cx="18" cy="19" r="3"></circle>
+        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+      </svg>
+    </button>
   </div>
+
+  <!-- FLOATING SCROLL TO TOP ARROW BUTTON -->
+  <button class="scroll-top-btn" id="scroll-top-btn" title="Scroll to top" aria-label="Scroll to top">
+    ▲
+  </button>
 
   <!-- 1. INSTAGRAM 3D ROYAL ENVELOPE SCREEN -->
   <div id="envelope-screen">
@@ -1225,19 +1399,12 @@
     <!-- HERO SECTION -->
     <section class="hero-reel">
       
-      <!-- ROYAL GANESH JI GOLDEN MEDALLION -->
-      <div class="ganesh-medallion" title="Lord Ganesha">
-        <svg class="ganesh-svg-art" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M50 14 C43 14 38 19 38 26 C38 31 41 35 45 37 C42 40 40 44 40 49 C40 54 44 58 48 58 C46 62 45 67 47 72 C49 76 53 79 57 78 C61 77 63 73 63 69 C63 63 58 60 55 58 C62 57 66 52 66 45 C66 38 60 33 54 33 C52 33 50 34 49 35 C48 33 48 31 49 29 C51 25 54 24 57 24 C59 24 61 25 63 26 L65 22 C61 19 56 18 50 18" stroke="#DFBA73" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M36 34 C31 34 26 38 26 44 C26 50 31 54 36 54" stroke="#DFBA73" stroke-width="2.2" stroke-linecap="round"/>
-          <path d="M64 34 C69 34 74 38 74 44 C74 50 69 54 64 54" stroke="#DFBA73" stroke-width="2.2" stroke-linecap="round"/>
-          <circle cx="50" cy="27" r="2.2" fill="#FFE28A"/>
-          <path d="M47 38 L53 38" stroke="#FFE28A" stroke-width="2" stroke-linecap="round"/>
-          <circle cx="58" cy="74" r="1.8" fill="#FFE28A"/>
-        </svg>
+      <!-- TRADITIONAL SHREE GANESH JI CIRCULAR MEDALLION -->
+      <div class="ganesh-circle-frame" title="Shree Ganesha">
+        <img class="ganesh-circle-img" src="ganesh.jpg" alt="Shree Ganesh" onerror="this.src='ganesh.png'; this.onerror=()=>this.src='https://images.unsplash.com/photo-1567591414240-e224e77ef79f?auto=format&fit=crop&w=500&q=80'" />
       </div>
 
-      <div class="om-ganesh">&#2384; Shree Ganeshaya Namah &#2384;</div>
+      <div class="ganesh-hindi-script">॥ श्री गणेशाय नमः ॥</div>
       <div class="ganesh-mantra">
         वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ ।<br/>
         निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा ॥
@@ -1289,7 +1456,7 @@
       </div>
     </section>
 
-    <!-- CARD 1: MEET THE COUPLE PROFILE SPOTLIGHT -->
+    <!-- CARD 1: MEET THE COUPLE PROFILE SPOTLIGHT (groom.jpg & bride.jpg) -->
     <section>
       <div class="section-title">
         <h2>The Couple</h2>
@@ -1300,7 +1467,7 @@
         <!-- Groom Card -->
         <div class="profile-card">
           <div class="profile-avatar-frame">
-            <img src="groom.jpg" alt="Ankush" onerror="this.src='couple.jpg'" />
+            <img src="groom.jpg" alt="Ankush" onerror="this.src='chapter4.jpg'" />
           </div>
           <div class="profile-role">The Groom</div>
           <div class="profile-name">Ankush</div>
@@ -1310,7 +1477,7 @@
         <!-- Bride Card -->
         <div class="profile-card">
           <div class="profile-avatar-frame">
-            <img src="bride.jpg" alt="Supriya" onerror="this.src='couple.jpg'" />
+            <img src="bride.jpg" alt="Supriya" onerror="this.src='chapter2.jpg'" />
           </div>
           <div class="profile-role">The Bride</div>
           <div class="profile-name">Supriya</div>
@@ -1385,32 +1552,32 @@
               <div class="coming-soon-badge-center">✨ Coming Soon ✨</div>
               <div style="font-family:'Cinzel Decorative', serif; font-size:1.6rem; color:var(--gold-primary); margin-bottom:8px;">Together Forever</div>
               <p style="font-size:0.8rem; color:#f0d9c4; max-width:280px; line-height:1.5;">
-                The wedding day memories are on their way! Counting down to 10 November 2026.
+                The wedding day memories are on their way! Counting down to November 2026.
               </p>
             </div>
             <div class="reel-caption-overlay">
               <span class="reel-tag">Chapter V</span>
-              <div class="reel-title">The Grand Day</div>
-              <div class="reel-desc">Photos coming soon following the wedding celebrations.</div>
+              <div class="reel-title">The Celebrations</div>
+              <div class="reel-desc">Photos coming soon following the wedding festivities.</div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CARD 3: FUNCTION CARDS WITH THEMED BANNERS -->
+    <!-- CARD 3: 3 SOCIETY CEREMONY CARDS (FIXED LOCAL + RELIABLE FALLBACKS) -->
     <section id="events-section">
       <div class="section-title">
         <h2>Ceremonies</h2>
-        <span>Itinerary &amp; Celebration Details</span>
+        <span>Itinerary &amp; Venue Details</span>
       </div>
 
       <div class="events-flow">
         
-        <!-- 1. Sukhmani Sahib Path & Satsang (Devotional Gurbani Theme) -->
+        <!-- 1. Sukhmani Sahib Path & Satsang -->
         <div class="event-card">
           <div class="event-banner-wrap">
-            <img class="event-banner-img" src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80" alt="Holy Satsang Theme" />
+            <img class="event-banner-img" src="sukhmani.jpg" alt="Sukhmani Sahib Path" onerror="this.src='path.jpg'; this.onerror=()=>this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Harmandir_Sahib_1.jpg/800px-Harmandir_Sahib_1.jpg'" />
             <div class="event-banner-overlay">
               <span class="event-badge-tag">🕊️ Holy Satsang</span>
               <span style="color:#fef0c7; font-size:0.75rem; letter-spacing:1px; font-weight:600;">WED, 04 NOV</span>
@@ -1420,14 +1587,16 @@
             <div class="card-top-row">
               <div class="card-title-group">
                 <h3>Sukhmani Sahib Path &amp; Satsang</h3>
+                <div class="event-subheading">Divine Blessings &amp; Spiritual Kirtan</div>
                 <div class="event-date">Wednesday, 04 November 2026</div>
               </div>
               <div class="card-time-pill">08:00 AM</div>
             </div>
+            <p class="card-ritual-desc">An auspicious beginning to our celebrations with sacred path, divine kirtan, and heartfelt prayers.</p>
             <div class="metadata-row">
               <span class="meta-pill">📍 Home Venue</span>
               <span class="meta-pill"><span class="color-dot" style="background:#FAD2E1;"></span> Attire: Traditional Pastels</span>
-              <span class="meta-pill">🌸 Divine Blessings</span>
+              <span class="meta-pill">🌸 Langar Prasad</span>
             </div>
             <div class="card-actions">
               <a class="btn-action-sm btn-map-sm" href="https://www.google.com/maps/place/Garden+Floor+Extension/@30.7484666,76.6255124,17z/data=!4m6!3m5!1s0x390ffbcc44bc1a7d:0x85469f5d5404f53!8m2!3d30.7484436!4d76.6281195!16s%2Fg%2F11s7wsmfmv" target="_blank">📍 Maps</a>
@@ -1436,10 +1605,10 @@
           </div>
         </div>
 
-        <!-- 2. DJ Night & Dinner (Festive Glitz & Lights Theme) -->
+        <!-- 2. DJ Night & Dinner -->
         <div class="event-card">
           <div class="event-banner-wrap">
-            <img class="event-banner-img" src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80" alt="DJ Night Beats Theme" />
+            <img class="event-banner-img" src="dj.jpg" alt="DJ Night Beats Theme" onerror="this.src='djnight.jpg'; this.onerror=()=>this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/DJ_playing_techno_music%2C_nightlife%2C_Koh_Chang%2C_Thailand.jpg/800px-DJ_playing_techno_music%2C_nightlife%2C_Koh_Chang%2C_Thailand.jpg'" />
             <div class="event-banner-overlay">
               <span class="event-badge-tag">🪩 Dance &amp; Beats</span>
               <span style="color:#fef0c7; font-size:0.75rem; letter-spacing:1px; font-weight:600;">FRI, 06 NOV</span>
@@ -1449,10 +1618,12 @@
             <div class="card-top-row">
               <div class="card-title-group">
                 <h3>DJ Night &amp; Dinner</h3>
+                <div class="event-subheading">Glitz, Music &amp; Celebrations</div>
                 <div class="event-date">Friday, 06 November 2026</div>
               </div>
               <div class="card-time-pill">07:00 PM</div>
             </div>
+            <p class="card-ritual-desc">An evening of dynamic Punjabi beats, non-stop dancing, dazzling lights, and delicious dinner.</p>
             <div class="metadata-row">
               <span class="meta-pill">📍 Home Venue</span>
               <span class="meta-pill"><span class="color-dot" style="background:#E2C044;"></span> Attire: Glitz &amp; Indo-Western</span>
@@ -1465,23 +1636,25 @@
           </div>
         </div>
 
-        <!-- 3. Traditional Jago Celebration (Punjabi Folk Lights Theme) -->
+        <!-- 3. Traditional Jago Celebration (Society Grand Highlight Card) -->
         <div class="event-card highlight">
           <div class="event-banner-wrap">
-            <img class="event-banner-img" src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80" alt="Jago Night Theme" />
+            <img class="event-banner-img banner-jago" src="jago.jpg" alt="Jago Night Theme" onerror="this.src='https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80'; this.onerror=()=>this.src='https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80'" />
             <div class="event-banner-overlay">
               <span class="event-badge-tag" style="background:rgba(170,119,28,0.95); border-color:#fff;">🪔 Jago Toli &amp; Giddha</span>
-              <span style="color:#ffffff; font-size:0.75rem; letter-spacing:1px; font-weight:700;">MON, 09 NOV</span>
+              <span style="color:#ffffff; font-size:0.75rem; letter-spacing:1px; font-weight:700;">★ GRAND CELEBRATION ★</span>
             </div>
           </div>
           <div class="event-card-body">
             <div class="card-top-row">
               <div class="card-title-group">
                 <h3 style="color:#6b0b1a;">Traditional Jago Celebration</h3>
+                <div class="event-subheading">Punjabi Folk Traditions &amp; Dhol</div>
                 <div class="event-date" style="color:#aa771c;">Monday, 09 November 2026</div>
               </div>
               <div class="card-time-pill">07:00 PM</div>
             </div>
+            <p class="card-ritual-desc">Carrying the illuminated Jago brass pot, traditional boliyan, energetic giddha, and infectious dhol beats.</p>
             <div class="metadata-row">
               <span class="meta-pill" style="background:#fce2b8;">📍 Home Venue</span>
               <span class="meta-pill"><span class="color-dot" style="background:#FF5722;"></span> Attire: Vibrant Punjabi Attire</span>
@@ -1502,7 +1675,7 @@
       <div class="hashtag-card">
         <div class="hashtag-title">#AnkushWedsSupriya</div>
         <div class="hashtag-sub">
-          Capture the joyous moments, tag our official hashtag, and share your smiles with us!
+          Capture the magical moments, tag our official hashtag, and share your beautiful memories with us!
         </div>
       </div>
     </section>
@@ -1514,15 +1687,15 @@
         <div class="guide-grid">
           <div class="guide-item">
             <span class="icon">🎁</span>
-            <div><strong>Warm Blessings:</strong> Your presence, love, and prayers are our greatest blessings.</div>
+            <div><strong>Warm Blessings:</strong> Your gracious presence, love, and heartfelt prayers are the greatest gift for Ankush &amp; Supriya as they begin this sacred journey together.</div>
           </div>
           <div class="guide-item">
             <span class="icon">🧥</span>
-            <div><strong>Pleasant Evenings:</strong> November evenings in Kharar carry a refreshing nip in the air. Keep a light jacket handy for comfortable dancing!</div>
+            <div><strong>Pleasant Evenings:</strong> November evenings in Kharar carry a refreshing nip in the air. Keep light layers handy for comfortable dancing and dining!</div>
           </div>
           <div class="guide-item">
             <span class="icon">🚗</span>
-            <div><strong>Easy Parking:</strong> Ample parking space is available right outside Garden Floor Extension.</div>
+            <div><strong>Easy Parking:</strong> Dedicated parking is coordinated right outside Garden Floor Extension.</div>
           </div>
         </div>
       </div>
@@ -1625,7 +1798,46 @@
 
     document.getElementById('music-btn').addEventListener('click', toggleMusic);
 
-    // 2. 3D ENVELOPE OPENING ANIMATION
+    // 2. NATIVE & FALLBACK SHARE HANDLER
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        const shareData = {
+          title: 'Ankush weds Supriya invitation',
+          text: 'With the blessings of Sweety Gupta & Naresh Kumar. Wedding celebrations in November 2026 at Kharar.',
+          url: window.location.href
+        };
+        if (navigator.share) {
+          try {
+            await navigator.share(shareData);
+          } catch (err) {
+            // User dismissed or canceled
+          }
+        } else {
+          navigator.clipboard.writeText(window.location.href).then(() => {
+            alert('Invitation link copied to clipboard!');
+          });
+        }
+      });
+    }
+
+    // 3. SCROLL TO TOP ARROW BUTTON HANDLER
+    const scrollTopBtn = document.getElementById('scroll-top-btn');
+    if (scrollTopBtn) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 380) {
+          scrollTopBtn.classList.add('visible');
+        } else {
+          scrollTopBtn.classList.remove('visible');
+        }
+      }, { passive: true });
+
+      scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    // 4. 3D ENVELOPE OPENING ANIMATION & SCROLL TRIGGER
     const envelopeScreen = document.getElementById('envelope-screen');
     const envelopeStage = document.getElementById('envelope-trigger');
     let isEnvelopeOpened = false;
@@ -1640,12 +1852,13 @@
 
       setTimeout(() => {
         envelopeScreen.classList.add('opened');
+        revealCardsInView();
       }, 1200);
     }
 
     envelopeStage.addEventListener('click', triggerEnvelopeOpen);
 
-    // 3. REEL CONTROLLER
+    // 5. REEL CONTROLLER
     const reelFeed = document.getElementById('reel-feed');
     const reelViewport = document.getElementById('reel-viewport');
     const btnReelUp = document.getElementById('btn-reel-up');
@@ -1682,7 +1895,7 @@
     btnLike.addEventListener('click', spawnHeartEffect);
     reelFeed.addEventListener('dblclick', spawnHeartEffect);
 
-    // 4. COUNTDOWN TIMER (10 Nov 2026, 06:00 PM IST)
+    // 6. COUNTDOWN TIMER (10 Nov 2026, 06:00 PM IST)
     const weddingDate = new Date('2026-11-10T18:00:00+05:30').getTime();
     function updateTimer() {
       const now = new Date().getTime();
@@ -1697,16 +1910,36 @@
     setInterval(updateTimer, 1000);
     updateTimer();
 
-    // 5. SCROLL OBSERVER
-    const cards = document.querySelectorAll('.event-card');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) e.target.classList.add('in-view');
-      });
-    }, { threshold: 0.12 });
-    cards.forEach(card => observer.observe(card));
+    // 7. RELIABLE 3D SCROLL ENTRANCE OBSERVER FOR ALL CARDS
+    const allAnimatedCards = document.querySelectorAll(
+      '.event-card, .profile-card, .hashtag-card, .guide-card, .invitation-card-box'
+    );
 
-    // 6. PETAL & GOLD PARTICLES ENGINE
+    const cardObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in-view');
+        }
+      });
+    }, { 
+      threshold: 0.08,
+      rootMargin: '0px 0px -40px 0px' 
+    });
+
+    allAnimatedCards.forEach(card => cardObserver.observe(card));
+
+    function revealCardsInView() {
+      allAnimatedCards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 30) {
+          card.classList.add('in-view');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', revealCardsInView, { passive: true });
+
+    // 8. PETAL & GOLD PARTICLES ENGINE
     const canvas = document.getElementById('fx-canvas');
     const ctx = canvas.getContext('2d');
     let w = canvas.width = window.innerWidth;
@@ -1756,7 +1989,7 @@
       constructor() { this.init(); }
       init() {
         this.x = Math.random() * w;
-        this.y = Math.random() * h;
+        this.y = -15;
         this.size = Math.random() * 1.8 + 0.6;
         this.vy = Math.random() * 0.6 + 0.2;
         this.alpha = Math.random() * 0.7 + 0.2;
